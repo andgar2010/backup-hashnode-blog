@@ -1,4 +1,10 @@
-## Dart - Use late allocation if possible
+---
+title: "Dart - Use late allocation if possible"
+datePublished: Fri Oct 29 2021 00:00:00 GMT+0000 (Coordinated Universal Time)
+cuid: ckvgy91os04lzm4s13sb41i3v
+slug: dart-late-keyword
+
+---
 
 
 Dart v2.9 added the **late** modifier on variables.
