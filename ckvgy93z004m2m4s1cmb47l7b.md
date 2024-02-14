@@ -1,4 +1,10 @@
-## Dart - En lo posible utilice la asignación tardía
+---
+title: "Dart - En lo posible utilice la asignación tardía"
+datePublished: Fri Oct 29 2021 00:00:00 GMT+0000 (Coordinated Universal Time)
+cuid: ckvgy93z004m2m4s1cmb47l7b
+slug: dart-late-keyword-1
+
+---
 
 
 Dart v2.9 añadió el modificador **late** en las variables.
