@@ -129,11 +129,46 @@ dependencies:
     print(HttpStatus.ok.name);         // Output: OK
     print(HttpStatus.ok.code);         // Output: 200
     print(HttpStatus.ok.description);  // Output: The request was fulfilled.
+    print(HttpStatus.code404NotFound); // Is an alias representing the [HttpStatus.notFound] constant, offering a direct substitute for it to facilitate auto-completion in IDEs.
+    // Salida:
+    // HttpStatus(
+    //    code: 404,
+    //    name: 'Not Found',
+    //    description: 'The origin server did not find a current representation for '
+    //        'the target resource or is not willing to disclose that one exists.',
+    //  );`
     ```
     
 3. **Check Statuses:**
     
     ```dart
+    /// Returns true if this ranges between 100 y 199
+    res.statusCode.isInformationHttpStatusCode;
+    print(HttpStatusCode.processing.isInformationHttpStatusCode); // true
+    print(HttpStatusCode.notFound.isInformationHttpStatusCode); // false
+    
+    /// Returns true if this ranges between 200 y 299
+    res.statusCode.isSuccessfulHttpStatusCode;
+    print(200.isSuccessfulHttpStatusCode); // true
+    print(400.isSuccessfulHttpStatusCode); // false
+    print(HttpStatusCode.accepted.isSuccessfulHttpStatusCode); // true
+    print(HttpStatusCode.notFound.isSuccessfulHttpStatusCode); // false
+    
+    /// Returns true if this ranges between 300 y 399
+    res.statusCode.isRedirectHttpStatusCode;
+    print(HttpStatusCode.permanentRedirect.isRedirectHttpStatusCode); // true
+    print(HttpStatusCode.notFound.isRedirectHttpStatusCode); // false
+    
+    /// Returns true if this ranges between 400 y 499
+    res.statusCode.isClientErrorHttpStatusCode;
+    print(HttpStatusCode.notFound.isClientErrorHttpStatusCode); // true
+    print(HttpStatusCode.processing.isClientErrorHttpStatusCode); // false
+    
+    /// Returns true if this ranges between 500 y 599
+    res.statusCode.isServerErrorHttpStatusCode;
+    print(HttpStatusCode.internalServerError.isServerErrorHttpStatusCode); // true
+    print(HttpStatusCode.notFound.isServerErrorHttpStatusCode); // false;
+    
     if (res.statusCode.isSuccessfulHttpStatusCode) {
       // Handle successful response
     } else if (res.statusCode.isClientErrorHttpStatusCode) {
@@ -146,7 +181,16 @@ dependencies:
 4. **Convert from Int:**
     
     ```dart
-    final httpStatus = HttpStatus.fromCode(res.statusCode);
+    final httpStatus = HttpStatus.fromCode(res.statusCode); // res.statusCode = 404
+    
+    print(httpStatus);
+    // Salida:
+    // HttpStatus(
+    //    code: 404,
+    //    name: 'Not Found',
+    //    description: 'The origin server did not find a current representation for '
+    //        'the target resource or is not willing to disclose that one exists.',
+    //  );
     ```
     
 
