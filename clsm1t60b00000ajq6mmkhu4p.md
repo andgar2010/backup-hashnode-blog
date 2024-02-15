@@ -6,7 +6,7 @@ Constantes que enumeran los códigos de estado HTTP en Dart. Se soportan todos l
 datePublished: Wed Feb 14 2024 17:10:47 GMT+0000 (Coordinated Universal Time)
 cuid: clsm1t60b00000ajq6mmkhu4p
 slug: dart-httpstatus-paquete
-canonical: https://tech-andgar.me/es/posts/dart-http_status-paquete/
+canonical: https://tech-andgar.me/es/posts/dart-http_status-package/
 tags: dart, http-status, http-status-codes
 
 ---
