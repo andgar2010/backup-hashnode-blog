@@ -1,5 +1,7 @@
 ---
 title: "`http_status` Dart Package: A Comprehensive Guide"
+seoTitle: "http_status Dart Package: A Comprehensive Guide"
+seoDescription: "http_status Dart Package: A Comprehensive Guide Constants enumerating the HTTP status codes in Dart."
 datePublished: Wed Feb 14 2024 17:10:48 GMT+0000 (Coordinated Universal Time)
 cuid: clsm1t6yf00010ajq8mkhf65v
 slug: dart-httpstatus-package
