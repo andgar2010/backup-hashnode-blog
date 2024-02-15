@@ -22,9 +22,9 @@ tags: dart, http-status, http-status-codes
 * **Información:** Las constantes también ofrecen una descripción concisa del código de estado, que puede ser útil para depurar o entender las respuestas de la API.
     
 
-## Códigos
+## Códigos de estado HTTP
 
-| Code | Http Status Name | Http Status (v1.x - v2.x Deprecated) | Http Status (v2.x - v3.x) |
+| Código | Nombre de estado HTTP | `http_status` (v1.x - v2.x Deprecated \[obsoleto\]) | `http_status` (v2.x - v3.x) |
 | --- | --- | --- | --- |
 | 100 | Continue | Continue / CONTINUE | continue\_ |
 | 101 | Switching Protocols | Switching\_Protocols / SWITCHING\_PROTOCOLS | switchingProtocols |
@@ -130,11 +130,46 @@ dependencias:
     print(HttpStatus.ok.name); // Salida: OK
     print(HttpStatus.ok.code); // Salida: 200
     print(HttpStatus.ok.description); // Salida: The request was fulfilled.
+    print(HttpStatus.code404NotFound); // es un alias que representa la constante [HttpStatus.notFound], ofreciendo un sustituto directo de la misma para facilitar el autocompletado en los IDE.
+    // Salida: 
+    // HttpStatus(
+    //    code: 404,
+    //    name: 'Not Found',
+    //    description: 'The origin server did not find a current representation for '
+    //        'the target resource or is not willing to disclose that one exists.',
+    //  );
     ```
     
 3. **Comprobar estados:**
     
     ```dart
+      /// Devuelve true si está entre 100 y 199
+      res.statusCode.isInformationHttpStatusCode;
+      print(HttpStatusCode.processing.isInformationHttpStatusCode); // true
+      print(HttpStatusCode.notFound.isInformationHttpStatusCode); // false
+    
+      /// Devuelve true si el código está entre 200 y 299
+      res.statusCode.isSuccessfulHttpStatusCode;
+      print(200.isSuccessfulHttpStatusCode); // true
+      print(400.isSuccessfulHttpStatusCode); // false
+      print(HttpStatusCode.accepted.isSuccessfulHttpStatusCode); // true
+      print(HttpStatusCode.notFound.isSuccessfulHttpStatusCode); // false
+    
+      /// Devuelve true si el código está entre 300 y 399
+      res.statusCode.isRedirectHttpStatusCode;
+      print(HttpStatusCode.permanentRedirect.isRedirectHttpStatusCode); // true
+      print(HttpStatusCode.notFound.isRedirectHttpStatusCode); // false
+    
+      /// Devuelve true si está entre 400 y 499
+      res.statusCode.isClientErrorHttpStatusCode;
+      print(HttpStatusCode.notFound.isClientErrorHttpStatusCode); // true
+      print(HttpStatusCode.processing.isClientErrorHttpStatusCode); // false
+    
+      /// Devuelve true si el código está entre 500 y 599
+      res.statusCode.isServerErrorHttpStatusCode;
+      print(HttpStatusCode.internalServerError.isServerErrorHttpStatusCode); // true
+      print(HttpStatusCode.notFound.isServerErrorHttpStatusCode); // false;
+    
     if (res.statusCode.isSuccessfulHttpStatusCode) { // Código de estado HTTP 200 - 299
       // Manejar respuesta exitosa
     } else if (res.statusCode.isClientErrorHttpStatusCode) { // Código de estado HTTP 400 - 499
@@ -147,7 +182,16 @@ dependencias:
 4. **Convertir desde Int:**
     
     ```dart
-    final httpStatus = HttpStatus.fromCode(res.statusCode);
+    final httpStatus = HttpStatus.fromCode(res.statusCode); // res.statusCode = 404
+    
+    print(httpStatus);
+    // Salida: 
+    // HttpStatus(
+    //    code: 404,
+    //    name: 'Not Found',
+    //    description: 'The origin server did not find a current representation for '
+    //        'the target resource or is not willing to disclose that one exists.',
+    //  );
     ```
     
 
