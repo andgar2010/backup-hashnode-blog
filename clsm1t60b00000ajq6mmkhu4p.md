@@ -108,4 +108,4 @@ Una librería Dart para debuguear y mostrar códigos de estado http. Incluye 63 
 
 ## Instalación
 
-Continúe este artículo en mi blog personal [aquí](https://tech-andgar.me/es/posts/dart-http_status-package/).
+*Continúe este artículo en mi blog personal* [*aquí*](https://tech-andgar.me/es/posts/dart-http_status-package/)*.*
