@@ -32,4 +32,4 @@ Por ejemplo, si tienes cuatro variables para cuatro colores de borde diferentes,
 
 ## De lo más general a lo más específico: Un ejemplo
 
-Continúe este artículo en mi blog personal [aquí](https://tech-andgar.me/es/posts/buenas-pr%C3%A1cticas-para-nombrar-las-variables-de-forma-modular/).
+*Continúe este artículo en mi blog personal* [*aquí*](https://tech-andgar.me/es/posts/buenas-pr%C3%A1cticas-para-nombrar-las-variables-de-forma-modular/)*.*
