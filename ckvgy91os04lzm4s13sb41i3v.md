@@ -41,6 +41,6 @@ void main(List<String> args) {
 Uncaught Error: LateInitializationError: Field 'name' has not been initialized.
 ```
 
-In this case, we are sure that we will initialize the variable, so we can tell Dart with the reservation keyword late.  
-  
-Continue this article on my personal blog [here](https://tech-andgar.me/posts/dart-late-keyword/).
+In this case, we are sure that we will initialize the variable, so we can tell Dart with the reservation keyword late.
+
+*Continue this article on my personal blog* [*here*](https://tech-andgar.me/posts/dart-late-keyword/)*.*
